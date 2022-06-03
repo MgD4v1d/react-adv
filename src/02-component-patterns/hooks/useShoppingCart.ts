@@ -10,30 +10,17 @@ export const useShoppingCart = () => {
 
         setShoppingCart((oldShoppingCart) => {
 
-            const productInCart: ProductInCart = oldShoppingCart[product.id] || {...product, quantity: 0}
-
-            if(Math.max(productInCart.quantity + quantity, 0) > 0){
-                productInCart.quantity +=  quantity;
-
-                return {
-                    ...oldShoppingCart,
-                    [product.id]: productInCart
-                }
+            // console.log({quantity})
+            
+            if(quantity === 0){
+                const { [product.id]:toDelete, ...rest } = oldShoppingCart;
+                return {...rest}
             }
 
-                const { [product.id]:toDelete, ...rest } = oldShoppingCart;
-                return rest;
-
-            
-            // if(quantity === 0){
-                // const { [product.id]:toDelete, ...rest } = oldShoppingCart;
-                // return {...rest}
-            // }
-
-            // return {
-            //     ...oldShoppingCart,
-            //     [product.id]: {...product, quantity}
-            // }
+            return {
+                ...oldShoppingCart,
+                [product.id]: {...product, quantity}
+            }
 
         });
 
@@ -42,7 +29,7 @@ export const useShoppingCart = () => {
 
     return {
         shoppingCart,
-        
+
         onProductQuatityChange
     }
 
