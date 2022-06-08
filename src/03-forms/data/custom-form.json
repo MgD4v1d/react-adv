@@ -1,0 +1,79 @@
+[
+    {
+        "type": "text",
+        "name": "firstName",
+        "placeholder": "Enter your first name",
+        "label": "First Name",
+        "value": "",
+        "validations":[
+            {
+                "type": "required"
+            },
+            {
+                "type": "minLength",
+                "value": 3
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "name": "lastName",
+        "placeholder": "Enter your last name",
+        "label": "Last Name",
+        "value": "",
+        "validations":[
+            {
+                "type": "required"
+            }            
+        ]
+    },
+    {
+        "type": "email",
+        "name": "email",
+        "placeholder": "Enter your Email address",
+        "label": "Email",
+        "value": "",
+        "validations":[
+            {
+                "type": "required"
+            },
+            {
+                "type": "email"
+            }
+        ]
+    },
+    {
+        "type": "select",
+        "name": "favoriteGame",
+        "label": "Favorite Game",
+        "value": "",
+        "options":[
+            {
+                "id": 1,
+                "name": "Dota 2"
+            },
+            {
+                "id": 2,
+                "name": "League of Legends"
+            },
+            {
+                "id": 3,
+                "name": "CS:GO"
+            },
+            {
+                "id": 4,
+                "name": "Overwatch"
+            },
+            {
+                "id": 5,
+                "name": "Hearthstone"
+            }
+        ]
+        ,
+        "validations":[
+            {
+                "type": "required"
+            }
+        ]
+    }
+]
